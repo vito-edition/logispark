@@ -1,3 +1,18 @@
+# Block XML-RPC
+<Files xmlrpc.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Block wp-config.php access
+<Files wp-config.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Hide server info
+ServerSignature Off
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

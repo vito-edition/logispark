@@ -73,6 +73,11 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+// Security hardening
+define( 'DISALLOW_FILE_EDIT', true );      // Disable theme/plugin editor in admin
+define( 'DISALLOW_FILE_MODS', false );     // Allow plugin/theme updates
+define( 'WP_POST_REVISIONS', 3 );          // Limit post revisions
+
 // Reverse proxy (Pangolin) HTTPS detection
 if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
 	$_SERVER['HTTPS'] = 'on';
