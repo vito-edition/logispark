@@ -239,7 +239,9 @@ add_action('wp_footer', function () {
     var a = e.target.closest('a');
     if (!a) return;
     var href = a.getAttribute('href') || '';
-    if (href.indexOf('/contacto') !== -1 || href === '#contacto') {
+    var isNavLink = a.classList.contains('nav-link') || a.classList.contains('nav-cta');
+    var onContactPage = window.location.pathname.indexOf('/contacto') !== -1;
+    if ((href.indexOf('/contacto') !== -1 || href === '#contacto') && !isNavLink && !onContactPage) {
       e.preventDefault();
       // try to guess service from page URL
       var path = window.location.pathname;
